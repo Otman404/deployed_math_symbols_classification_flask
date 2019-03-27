@@ -13,7 +13,6 @@ import sys
 import os
 sys.path.append(os.path.abspath("./model"))
 from load import *
-port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
 global model, graph
