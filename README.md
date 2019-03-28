@@ -22,7 +22,7 @@ Draw a symbol on the drawing zone and click 'Predict' to get the result, you can
 ```sh
 $ git clone https://github.com/Otman404/deployed_math_symbols_classification_flask
 $ cd app
-
+$ pip install -r requirements.txt
 $ export FLASK_APP=app.py
 $ flask run --host=0.0.0.0
 ```
