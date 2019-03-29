@@ -27,6 +27,13 @@
 			context.fillStyle="white";
 			context.fillRect(0,0,canvas.width,canvas.height);
 		}
+		function speak(){
+			var x = document.getElementById("equation").innerText;
+			var msg = new SpeechSynthesisUtterance(x);
+			var voices = window.speechSynthesis.getVoices();
+			msg.voice = voices[5];
+			window.speechSynthesis.speak(msg);
+		}
 	</script>
 		<h1>Handwritten Math Symbols Recognition using Convolutional Neural Networks</h1>
 		
@@ -38,6 +45,7 @@
 			<button class="btn btn-outline-info btn-rounded waves-effect predictBtn" ><i class="fas fa-magic mr-1"></i> Predict</button>
 			<button class="btn btn-outline-danger btn-rounded waves-effect" id="clearButton"><i class="fas fa-eraser mr-1"></i> Clear</button>
 			<button class="btn btn-outline-success btn-rounded waves-effect" onclick="reset()"><i class="fas fa-redo-alt"></i></button>
+			<button type="button" class="btn btn-outline-secondary waves-effect" onclick="speak()"><i class="fas fa-volume-up"></i></button>
 		</div>
 
 		<div class="centered">
@@ -79,6 +87,11 @@
 							   var result = Obj.exec(eq);
 							//    $('#equation').append(data+"<strong style='color:green'> "+eval(eq)+"</strong>");
 							   $('#equation').append(data+"<strong style='color:green'> "+result+"</strong>");
+							   var y = document.getElementById("equation").innerText;
+						   	   var msg = new SpeechSynthesisUtterance(y);
+							   var voices = window.speechSynthesis.getVoices();
+							   msg.voice = voices[5];
+						   	   window.speechSynthesis.speak(msg);
 						   }
 	   				}
 	   			});
