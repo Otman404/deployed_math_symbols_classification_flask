@@ -3,6 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Handwritten Digit Recognition using Convolutional Neural Networks</title>
+	<!-- Favicone -->
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 	<!-- Font Awesome -->
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
 	<!-- Material Design Bootstrap -->
@@ -63,9 +65,12 @@
 	   					if(data != '='){
 							   $('#equation').append(data+' ');
 						   }else{
+							   var Obj = new BigEval();
 							   var x = document.getElementById("equation").innerText;
 							   var eq = x.replace(/\s/g, '');
-							   $('#equation').append(data+"<strong style='color:green'> "+eval(eq)+"</strong>");
+							   var result = Obj.exec(eq);
+							//    $('#equation').append(data+"<strong style='color:green'> "+eval(eq)+"</strong>");
+							   $('#equation').append(data+"<strong style='color:green'> "+result+"</strong>");
 						   }
 	   				}
 	   			});
@@ -86,5 +91,7 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/js/mdb.min.js"></script>
+<!-- BigEval.js -->
+<script src="{{url_for('static', filename='bigEval.js')}}"></script>
 </body>
 </html>
