@@ -19,7 +19,14 @@
 			x = x.slice(0, -1);
 			document.getElementById("equation").innerHTML = x;
 		}
-		
+		function reset(){
+			document.getElementById("equation").innerText = "";
+			document.getElementById("symbol").innerText = "";
+			const context = canvas.getContext('2d');
+			context.clearRect( 0, 0, 280, 280 );
+			context.fillStyle="white";
+			context.fillRect(0,0,canvas.width,canvas.height);
+		}
 	</script>
 		<h1>Handwritten Math Symbols Recognition using Convolutional Neural Networks</h1>
 		
@@ -30,6 +37,7 @@
 		<div class="centered">
 			<button class="btn btn-outline-info btn-rounded waves-effect predictBtn" ><i class="fas fa-magic mr-1"></i> Predict</button>
 			<button class="btn btn-outline-danger btn-rounded waves-effect" id="clearButton"><i class="fas fa-eraser mr-1"></i> Clear</button>
+			<button class="btn btn-outline-success btn-rounded waves-effect" onclick="reset()"><i class="fas fa-redo-alt"></i></button>
 		</div>
 
 		<div class="centered">
