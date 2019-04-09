@@ -11,9 +11,10 @@ Draw a symbol on the drawing zone and click 'Predict' to get the result, you can
 
 ![](img/img1.PNG)
 
-## operations
+## Operations
 
 ![](img/img2.PNG)
+![](img/img3.png)
 
 
 ## Running Locally
@@ -29,3 +30,12 @@ $ flask run --host=0.0.0.0
 
 Your app should now be running on [localhost:5000](http://localhost:5000/).
 
+
+## Docker Installation
+### Build and run an image for keras-application pretrained model
+ 
+```sh
+$ cd app
+$ docker build -t keras_flask_app .
+$ docker run -d -p 5000:5000 keras_flask_app 
+```
