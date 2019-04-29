@@ -7,6 +7,10 @@ This repository containts the deployed version of [This model](https://github.co
 
 Draw a symbol on the drawing zone and click 'Predict' to get the result, you can also perform basic math operations like addition , subtraction ... by Drawing for example : '2' then '+' then '1' , and when you draw '=' you automatically get the result.
 
+# How does it work
+
+![](img/Flask_Schema.jpg)
+
 # Interface
 
 ![](img/img1.PNG)
